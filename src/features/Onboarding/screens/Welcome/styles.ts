@@ -18,4 +18,6 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
   },
+  image: {tintColor: '#4F92FD'},
+  textColor: {color: '#4F92FD', fontSize: 16},
 });

@@ -23,10 +23,10 @@ export class Welcome extends PureComponent<Props> {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.container}>
-          <Image source={RNImg} />
+          <Image style={styles.image} source={RNImg} />
           <Text style={styles.title}>Welcome to Cerebral Care!</Text>
           <TouchableOpacity onPress={this.openChat} style={styles.chatButton}>
-            <Text>Click Here to Chat</Text>
+            <Text style={styles.textColor}>Click Here to Chat</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
