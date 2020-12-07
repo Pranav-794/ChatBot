@@ -6,9 +6,24 @@ import {
   StatusBar,
   TouchableOpacity,
 } from 'react-native';
+import {openChatBot} from '../../../../Libs/Navigation';
 import styles from './styles';
 
-export class App extends PureComponent {
+interface Props {
+  componentId: string;
+}
+
+export class App extends PureComponent<Props> {
+  constructor(props: Props) {
+    super(props);
+    this.openChat = this.openChat.bind(this);
+  }
+
+  openChat() {
+    const {componentId} = this.props;
+    openChatBot(componentId);
+  }
+
   render() {
     return (
       <>
@@ -16,7 +31,7 @@ export class App extends PureComponent {
         <SafeAreaView style={styles.container}>
           <View style={styles.container}>
             <Text style={styles.title}>Welcome to Cerebral Care!</Text>
-            <TouchableOpacity style={styles.chatButton}>
+            <TouchableOpacity onPress={this.openChat} style={styles.chatButton}>
               <Text>Click Here to Chat</Text>
             </TouchableOpacity>
           </View>

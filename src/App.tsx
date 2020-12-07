@@ -1,5 +1,15 @@
+import {Navigation} from 'react-native-navigation';
 import {setupAxios} from './configs/axios';
-import WelcomeScreen from './features/Onboarding/screens/Welcome';
+import ConfigNavigation from './configs/navigation';
+import {openWelcome} from './Libs/Navigation';
 
-setupAxios();
-export default WelcomeScreen;
+function startApp() {
+  Navigation.events().registerAppLaunchedListener(async () => {
+    console.log('startingApp.');
+    setupAxios();
+    ConfigNavigation();
+    openWelcome();
+  });
+}
+
+export default startApp;
