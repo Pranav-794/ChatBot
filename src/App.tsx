@@ -5,7 +5,6 @@ import {openWelcome} from './Libs/Navigation';
 
 function startApp() {
   Navigation.events().registerAppLaunchedListener(async () => {
-    console.log('startingApp.');
     setupAxios();
     ConfigNavigation();
     openWelcome();
